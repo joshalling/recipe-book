@@ -9,8 +9,9 @@ const App = () => (
           <span className="app-subtitle">For All Your Recipe Needs</span>
         </div>
         <nav>
-          <ul>
-            <li>home</li>
+          <ul className="app-navbar">
+            <li>recipes</li>
+            <li>favorites</li>
             <li>add recipe</li>
           </ul>
         </nav>

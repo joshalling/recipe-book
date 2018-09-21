@@ -1,28 +1,41 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.app-header {
+  position: sticky;
+  top: -100px;
+}
+.app-title {
+  color: var(--coffee);
+  font-family: Yanone Kaffeesatz, sans-serif;
+  font-size: 3em;
+  line-height: 1.05em;
+  margin: 0;
+  padding: 20px 0 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
+.app-subtitle {
+  color: var(--powder);
+  font-family: Poor Story, sans-serif;
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.app-navbar {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px 0px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.app-navbar > li {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0 2.5px;
+  padding: 10px;
+}
+
+.app-navbar > li:hover {
+  border-bottom: 3px solid var(--powder);
+  padding-bottom: 7px;
 }
