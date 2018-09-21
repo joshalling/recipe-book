@@ -1,10 +1,7 @@
-.app {
-  text-align: center;
-}
-
 .app-header {
   position: sticky;
   top: -100px;
+  text-align: center;
 }
 .app-title {
   color: var(--coffee);

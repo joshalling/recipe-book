@@ -1,21 +1,9 @@
 import React from 'react';
-import './App.css';
+import Header from '../Header/Header';
 
 const App = () => (
       <div className="app">
-        <header className="app-header">
-        <div className="app-logo">
-          <h1 className="app-title">Recipe Book</h1>
-          <span className="app-subtitle">For All Your Recipe Needs</span>
-        </div>
-        <nav>
-          <ul className="app-navbar">
-            <li>recipes</li>
-            <li>favorites</li>
-            <li>add recipe</li>
-          </ul>
-        </nav>
-        </header>
+        <Header />
         <main>
           { /* TODO: display recipes */   }
         </main>
