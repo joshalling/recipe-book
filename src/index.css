@@ -5,6 +5,10 @@
   --tan: #948c75;
   --dark: #333;
   --light: #ccc;
+
+  --font-title: Yanone Kaffeesatz;
+  --font-subtitle: Poor Story;
+  --font-main: Scope One;
 }
 
 body {
@@ -12,5 +16,5 @@ body {
   padding: 0;
 
   color: var(--dark);
-  font-family: Scope One, serif;
+  font-family: var(--font-main), serif;
 }

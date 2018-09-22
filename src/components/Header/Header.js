@@ -1,5 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Header.css';
+
+const activeStyle = {
+    borderBottom: '3px solid var(--teal)',
+    paddingBottom: '7px'
+};
 
 const Header = () => (
   <header className="app-header">
@@ -8,11 +14,11 @@ const Header = () => (
     <span className="app-subtitle">For All Your Recipe Needs</span>
   </div>
   <nav>
-    <ul className="app-navbar">
-      <li>recipes</li>
-      <li>favorites</li>
-      <li>add recipe</li>
-    </ul>
+    <div className="app-navbar">
+      <NavLink exact to="/" activeStyle={activeStyle}>recipes</NavLink>
+      <NavLink to="/favorites" activeStyle={activeStyle}>favorites</NavLink>
+      <NavLink to="/new-recipe" activeStyle={activeStyle}>add recipe</NavLink>
+    </div>
   </nav>
   </header>
 );

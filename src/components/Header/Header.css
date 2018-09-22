@@ -1,38 +1,46 @@
 .app-header {
   position: sticky;
   top: -100px;
+
   text-align: center;
 }
 .app-title {
-  color: var(--coffee);
-  font-family: Yanone Kaffeesatz, sans-serif;
-  font-size: 3em;
-  line-height: 1.05em;
   margin: 0;
   padding: 20px 0 0;
+
+  color: var(--coffee);
+  font-family: var(--font-title), sans-serif;
+  font-size: 3em;
+  line-height: 1.05em;
 }
 
 .app-subtitle {
   color: var(--powder);
-  font-family: Poor Story, sans-serif;
-  font-size: 1.5em;
+  font-family: var(--font-subtitle), sans-serif;
+  font-size: 1.1em;
 }
 
 .app-navbar {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px 0px;
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 
-.app-navbar > li {
-  box-sizing: border-box;
+.app-navbar > a {
   display: inline-block;
+
   margin: 0 2.5px;
   padding: 10px;
+
+  color: var(--dark);
+  text-decoration: none;
+  font-family: var(--font-subtitle), var(--font-main) sans-serif;
+  font-size: 1.35em;
 }
 
-.app-navbar > li:hover {
+.app-navbar > a:hover {
   border-bottom: 3px solid var(--powder);
   padding-bottom: 7px;
 }
