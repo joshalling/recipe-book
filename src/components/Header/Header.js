@@ -15,7 +15,7 @@ const Header = () => (
   </div>
   <nav>
     <div className="app-navbar">
-      <NavLink exact to="/" activeStyle={activeStyle}>recipes</NavLink>
+      <NavLink to="/recipes" activeStyle={activeStyle}>recipes</NavLink>
       <NavLink to="/favorites" activeStyle={activeStyle}>favorites</NavLink>
       <NavLink to="/new-recipe" activeStyle={activeStyle}>add recipe</NavLink>
     </div>
