@@ -14,9 +14,10 @@ const initialState = {
   recipes: {}
 };
 
-let newRecipe = {};
-
 export default function recipesReducer(state = initialState, action) {
+
+  let newRecipe = {};
+
   switch(action.type) {
     case FETCH_RECIPES_BEGIN:
     case SAVE_RECIPE_BEGIN:
