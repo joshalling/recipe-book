@@ -1,0 +1,26 @@
+.app-sidebar {
+  position: fixed;
+  top: 139px;
+  left: 0;
+  bottom: 0;
+
+  overflow: auto;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 4px 0px 3px -2px;
+  width: 200px;
+}
+
+.app-sidebar > a {
+  display: block;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 3px 0px;
+  padding: 10px;
+
+  color: var(--dark);
+  text-decoration: none;
+  font-family: var(--font-subtitle), var(--font-main), sans-serif;
+}
+
+.app-sidebar > a:hover {
+  background: var(--lighter);
+}

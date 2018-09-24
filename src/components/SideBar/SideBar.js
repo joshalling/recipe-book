@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-//import './SideBar.css';
+import './SideBar.css';
+
+const activeStyle = {
+  background: 'var(--light)'
+}
 
 const SideBar = ({recipes, match: { params }}) => (
   <div className="app-sidebar">
-    {Object.keys(recipes).map(key => <NavLink key={key} to={`${params.filter}/${key}`}>{recipes[key].name}</NavLink>)}
+    {Object.keys(recipes).map(key => <NavLink key={key} to={`/${params.filter}/${key}`} activeStyle={activeStyle}>{recipes[key].name}</NavLink>)}
   </div>
 );
 
