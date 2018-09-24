@@ -1,23 +1,39 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import SideBar from './SideBar';
 import { MemoryRouter } from 'react-router-dom';
+import { mount } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  
+function setup() {
   const props = {
-    recipes: {},
+    recipes: {
+      1: {name: 'Test 1'},
+      2: {name: 'Test 2'}
+    },
     match: {
-      params: {}
+      params: {
+        filter: 'recipes'
+      }
     }
   };
 
-  ReactDOM.render(
+  const wrapper = mount(
     <MemoryRouter initialEntries={[ '/' ]}>
       <SideBar {...props}/>
-    </MemoryRouter>,
-    div
+    </MemoryRouter>
   );
-  ReactDOM.unmountComponentAtNode(div);
+
+  return {
+    props,
+    wrapper
+  };
+}
+
+describe('components', () => {
+  describe('SideBar', () => {
+    it('should render properly', () => {
+      const { props, wrapper } = setup();
+      expect(wrapper.find('div').hasClass('app-sidebar')).toBe(true);
+      expect(wrapper.find('div').children()).toHaveLength(Object.keys(props.recipes).length);
+    });
+  });
 });

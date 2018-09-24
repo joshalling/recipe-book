@@ -1,20 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import { MemoryRouter } from 'react-router-dom';
+import { mount } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-
+function setup() {
   const props = {
-    dispatch: () => {}
-  }
+    dispatch: jest.fn()
+  };
 
-  ReactDOM.render(
+  const wrapper = mount(
     <MemoryRouter initialEntries={[ '/' ]}>
       <App {...props}/>
-    </MemoryRouter>,
-    div
+    </MemoryRouter>
   );
-  ReactDOM.unmountComponentAtNode(div);
+
+  return {
+    wrapper
+  };
+}
+
+describe('components', () => {
+  describe('App', () => {
+    it('should render properly', () => {
+      const { wrapper } = setup();
+      expect(wrapper.find('div').first().hasClass('app')).toBe(true);
+    });
+  });
 });

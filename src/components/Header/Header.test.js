@@ -1,15 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Header from './Header';
 import { MemoryRouter } from 'react-router-dom';
+import { mount } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
+function setup() {
+  const wrapper = mount(
     <MemoryRouter initialEntries={[ '/' ]}>
       <Header />
-    </MemoryRouter>,
-    div
+    </MemoryRouter>
   );
-  ReactDOM.unmountComponentAtNode(div);
+
+  return {
+    wrapper
+  };
+}
+
+describe('components', () => {
+  describe('Header', () => {
+    it('should render properly', () => {
+      const { wrapper } = setup();
+      expect(wrapper.find('header').hasClass('app-header')).toBe(true);
+      expect(wrapper.find('h1').hasClass('app-title')).toBe(true);
+      expect(wrapper.find('h1').text()).toBe('Recipe Book');
+    });
+  });
 });
