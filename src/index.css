@@ -1,5 +1,39 @@
+:root {
+  --teal: #07889b;
+  --powder: #66b9bf;
+  --coffee: #4f4436;
+  --tan: #948c75;
+  --dark: #333;
+  --light: #eee;
+  --lighter: #f5f5f5;
+
+  --font-title: Yanone Kaffeesatz;
+  --font-subtitle: Poor Story;
+  --font-main: Scope One;
+}
+
+/** SCROLLBAR */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lighter);
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+
+  color: var(--dark);
+  font-family: var(--font-main), serif;
 }

@@ -1,24 +1,29 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import { Route } from 'react-router';
+import PropTypes from 'prop-types';
+import SideBarContainer from '../../containers/SideBarContainer';
+import Header from '../Header/Header';
+import { fetchRecipes } from '../../actions/recipesActions';
 
-const App = () => (
-  <div className="app">
-    <header className="app-header">
-    <div className="app-logo">
-      <h1 className="app-title">Recipe Book</h1>
-      <span className="app-subtitle">For All Your Recipe Needs</span>
-    </div>
-    <nav>
-      <ul>
-        <li>home</li>
-        <li>add recipe</li>
-      </ul>
-    </nav>
-    </header>
-    <main>
-      { /* TODO: display recipes */   }
-    </main>
-  </div>
-);
+class App extends Component {
+  componentDidMount() {
+      this.props.dispatch(fetchRecipes());
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <Header />
+        <main>
+          <Route path="/:filter(recipes|favorites)" component={SideBarContainer} />
+        </main>
+      </div>
+    );
+  }
+}
+
+App.propTypes = {
+  dispatch: PropTypes.func.isRequired
+}
 
 export default App;
